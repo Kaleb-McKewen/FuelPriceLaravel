@@ -101,6 +101,8 @@ const config = {
     type: "bar",
     data,
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         animation: false,
         layout: {
             padding: {

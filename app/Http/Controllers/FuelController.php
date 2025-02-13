@@ -16,8 +16,11 @@ class FuelController extends Controller
             $times .= $entry->time.',';
             $average_prices .=$entry->average.',';
         }
-        $latestFuelprice = Fuelprice::orderby('time', 'desc')->first()->lowest;
+        $latestFuelpriceRaw = Fuelprice::orderby('time', 'desc')->first()->lowest;
 
-        return view('fuelprice.all', compact('times', 'average_prices', 'latestFuelprice'));
+        $latestFuelprice = preg_split("/\r\n|\n|\r/", $latestFuelpriceRaw);
+        array_pop($latestFuelprice);
+        
+        return view('components.all', compact('times', 'average_prices', 'latestFuelprice'));
     }
 }
