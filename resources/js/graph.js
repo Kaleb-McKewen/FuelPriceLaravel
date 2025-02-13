@@ -1,3 +1,6 @@
+import Chart from 'chart.js/auto';
+window.Chart = Chart;
+
 times = times.slice(0, -1);
 average_prices = average_prices.slice(0, -1);
 
@@ -126,4 +129,3 @@ const config = {
 
 // render init block
 const myChart = new Chart(document.getElementById("myChart"), config);
-

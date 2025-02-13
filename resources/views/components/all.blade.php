@@ -1,4 +1,5 @@
 <x-layout>
+    
     <div class="flex justify-center">
         <h1 class="text-3xl font-bold underline">Displaying all Fuel Data:</h1>
     </div>
@@ -20,6 +21,6 @@
 
     <?php echo "<script>var times = '$times';</script>";
     echo "<script>var average_prices = '$average_prices';</script>"; ?>
+@vite(['resources/js/app.js', 'resources/js/graph.js'])
 
-    @vite(['resources/js/chart.umd.min.js', 'resources/js/graph.js'])
 </x-layout>
