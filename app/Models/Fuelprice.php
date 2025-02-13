@@ -11,10 +11,12 @@ class Fuelprice extends Model
     protected $table = "fuelprice";
 
     protected $fillable = [
-        "id", "time", "average", "lowest"
+        "id",
+        "time",
+        "average",
+        "lowest"
     ];
     protected $primaryKey = "id";
 
     public $timestamps = false;
-    
 }
