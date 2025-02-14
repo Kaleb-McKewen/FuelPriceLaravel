@@ -26,8 +26,8 @@
             </div>
 
             <div class="flex gap-x-2 sm:gap-x-6 md:gap-x-8 text-lg/6 font-semibold text-black">
-                <a href="{{ route('index') }}">Summary</a> <!--Add styling for current page-->
-                <a href="#">Raw Data</a>
+                <a  @if(Route::currentRouteName() == 'index') class="text-red-500" @endif href="{{ route('index') }}">Summary</a>
+                <a  @if(Route::currentRouteName() == 'raw') class="text-red-500" @endif href="{{ route('raw') }}">Raw Data</a>
                 <a href="#">Source/Credits</a>
 
             </div>

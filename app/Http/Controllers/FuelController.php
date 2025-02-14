@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fuelprice;
-use Illuminate\Http\Request;
 
 class FuelController extends Controller
 {
@@ -22,5 +21,12 @@ class FuelController extends Controller
         array_pop($latestFuelprice);
         
         return view('components.all', compact('times', 'average_prices', 'latestFuelprice'));
+    }
+
+    public function rawData(){
+
+        $fuelprices = Fuelprice::select('id','time','average')->orderby('time', 'desc')->paginate(15);
+        
+        return view('components.rawData', compact('fuelprices'));
     }
 }
