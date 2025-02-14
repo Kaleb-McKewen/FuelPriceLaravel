@@ -15,18 +15,13 @@
 
 
 <body class="font-outfit">
-    <header class="bg-white m-8 border-b">
-        <nav class="mx-auto flex items-center justify-between max-md:justify-center p-2 lg:px-8" aria-label="Global">
-            <div class="flex max-md:hidden">
-                <a href="{{ route('index') }}" class="-m-1.5 p-1.5">
-                    <img class="h-6 max-md:hidden md:h-16 w-auto" src="{{ Vite::asset('resources/images/logo.svg') }}"
-                        alt="Sunshine PC Repairs Logo">
-                </a>
-            </div>
-
+    <header class="bg-white mx-8 my-4 border-b">
+        <nav class="mx-auto flex items-center justify-between px-2 pb-1 lg:px-8" aria-label="Global">
             <div>
-                <a href="{{ route('index') }}" class="-m-1.5 p-1.5">
-                    <h1 class="text-4xl p-0">Fuel Price</h1>
+                <a href="{{ route('index') }}" class="mx-1.5 px-1.5 flex flex-row items-center gap-x-10 py-3 min-sm:py-0">
+                    <img class="h-8 min-sm:h-20 w-auto" src="{{ Vite::asset('resources/images/logo.svg') }}"
+                        alt="Sunshine PC Repairs Logo">
+                    <h1 class="max-md:hidden m-1.5 p-1.5 text-4xl">Fuel Price</h1>
                 </a>
             </div>
 
