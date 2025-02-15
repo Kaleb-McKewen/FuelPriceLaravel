@@ -28,7 +28,8 @@
             <div class="flex gap-x-2 sm:gap-x-6 md:gap-x-8 text-lg/6 font-semibold text-black">
                 <a  @if(Route::currentRouteName() == 'index') class="text-red-500" @endif href="{{ route('index') }}">Summary</a>
                 <a  @if(Route::currentRouteName() == 'raw') class="text-red-500" @endif href="{{ route('raw') }}">Raw Data</a>
-                <a href="#">Source/Credits</a>
+                <a  @if(Route::currentRouteName() == 'source') class="text-red-500" @endif href="{{ route('source') }}">Source/Credits</a>
+               
 
             </div>
         </nav>
