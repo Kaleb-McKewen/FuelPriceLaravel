@@ -1,7 +1,5 @@
 <x-layout>
 
-
-
     <div class="max-lg:block flex flex-row items-center max-2xl:flex-col min-2xl:justify-center min-2xl:items-start">
         <div>
             <div class="flex justify-center">
