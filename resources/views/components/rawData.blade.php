@@ -5,7 +5,7 @@
             <h1 class="text-3xl font-medium underline">Displaying Raw Data:</h1>
         </div>
         <div class="form-group">
-            <select class="form-control" name="sort" id="sort"
+            <select class="form-control border border-gray-400" name="sort" id="sort"
                 onchange="if (this.value) window.location.href=this.value">
                 <option value="?sort=time&order=desc" @if (request('sort') == 'time' && request('order') == 'desc') selected @endif>Time [Newest
                     First]</option>
@@ -17,18 +17,17 @@
                     [Low-High]</option>
             </select>
         </div>
-        <table class="table-auto border border-gray-400 border-separate mb-8">
+        <table class="table- w-full border border-gray-400 border-separate mb-8">
             <tr>
-                <th class="border border-gray-300 text-xl">Time</th>
-                <th class="border border-gray-300 text-xl">Average</th>
-                <th class="border border-gray-300 text-xl"></th>
+                <th class="border border-gray-300 text-xl w-1/3">Time</th>
+                <th class="border border-gray-300 text-xl w-1/3">Average</th>
+                <th class="border border-gray-300 text-xl w-1/3"></th>
             </tr>
             @foreach ($fuelprices as $fuelprice)
                 <tr>
-                    <td class="border border-gray-300 text-center min-sm:text-lg">{{ $fuelprice->time }}</td>
-                    <td class="border border-gray-300 text-center min-sm:text-lg">{{ $fuelprice->average }}</td>
-                    <td class="border border-gray-300 text-center min-sm:text-lg"><a>More Info</a></td>
-                    <!--add link to view more detail using $fuelprice->id-->
+                    <td class="border border-gray-300 text-center min-sm:text-lg py-0.5">{{ $fuelprice->time }}</td>
+                    <td class="border border-gray-300 text-center min-sm:text-lg py-0.5">{{ $fuelprice->average }}</td>
+                    <td class="border border-gray-300 text-center"><a href="/raw/{{ $fuelprice->id }}" class="align-[0.5px] text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-sm text-sm px-1 py-0.5 self-center min-sm:text-lg">More Info</a></td>
                 </tr>
             @endforeach
         </table>

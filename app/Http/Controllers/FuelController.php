@@ -14,16 +14,18 @@ class FuelController extends Controller
         $fuelprice = Fuelprice::all();
         $times = "";
         $average_prices = "";
+        $time = $fuelprice->last()->time;
+        $price = $fuelprice->last()->average;
         foreach ($fuelprice as $entry) {
             $times .= $entry->time . ',';
             $average_prices .= $entry->average . ',';
         }
-        $latestFuelpriceRaw = Fuelprice::orderby('time', 'desc')->first()->lowest;
+        $lowestFuelstationsRaw = Fuelprice::orderby('time', 'desc')->first()->lowest;
 
-        $latestFuelprice = preg_split("/\r\n|\n|\r/", $latestFuelpriceRaw);
-        array_pop($latestFuelprice);
+        $lowestFuelstations = preg_split("/\r\n|\n|\r/", $lowestFuelstationsRaw);
+        array_pop($lowestFuelstations);
 
-        return view('components.all', compact('times', 'average_prices', 'latestFuelprice'));
+        return view('components.all', compact('times', 'average_prices', 'lowestFuelstations', 'time', 'price'));
     }
 
     public function rawData(Request $request)
@@ -44,5 +46,11 @@ class FuelController extends Controller
         })->paginate(15);
 
         return view('components.rawData', compact('fuelprices'));
+    }
+
+    public function show(Fuelprice $fuelprice){
+        $lowestFuelstations = preg_split("/\r\n|\n|\r/", $fuelprice->lowest);
+        array_pop($lowestFuelstations);
+        return view('components.rawDataIndividual', compact('fuelprice', 'lowestFuelstations'));
     }
 }

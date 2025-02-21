@@ -10,10 +10,11 @@
             </div>
         </div>
         <div class="flex flex-col content-center items-center flex-wrap min-lg:w-md">
-            <h2 class="text-3xl font-medium underline pb-4">Lowest 95 stations currently:</h2>
+            <h2 class="text-3xl font-medium mb-6 text-center">$<u>{{ $price }}</u> is the average price of 95 fuel as of {{ $time }}.</h2>
+            <h2 class="text-3xl font-medium underline mb-4">Lowest 95 stations currently:</h2>
             <ul class="list-decimal">
-                @foreach ($latestFuelprice as $fuelitem)
-                    <li class="pb-1 text-lg">{{ $fuelitem }}</li>
+                @foreach ($lowestFuelstations as $fuelstation)
+                    <li class="pb-1 text-lg">{{ $fuelstation }}</li>
                 @endforeach
 
             </ul>

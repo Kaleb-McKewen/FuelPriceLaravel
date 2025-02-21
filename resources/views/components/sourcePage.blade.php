@@ -6,7 +6,7 @@
             <!--Add Source Attributions from API-->
         </div>
         <div class="w-2xl">
-            <p class="text-center">{{ env("API_REFERENCE") }}</p>
+            <p class="text-center text-xl">{{ env("API_REFERENCE") }}</p>
         </div>
     </div>
 </x-layout>
