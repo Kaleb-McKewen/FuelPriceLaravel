@@ -14,10 +14,11 @@
 </head>
 
 <body class="font-outfit">
-    <header class="bg-white mx-8 my-4 border-b">
+    <header class="bg-white mx-8 my-4 border-b max-sm:mx-0">
         <nav class="mx-auto flex items-center justify-between px-2 pb-1 lg:px-8" aria-label="Global">
             <div>
-                <a href="{{ route('index') }}" class="mx-1.5 px-1.5 flex flex-row items-center gap-x-10 py-3 min-sm:py-0">
+                <a href="{{ route('index') }}"
+                    class="mx-1.5 px-1.5 flex flex-row items-center gap-x-10 py-3 min-sm:py-0">
                     <img class="h-8 min-sm:h-20 w-auto" src="{{ Vite::asset('resources/images/logo.svg') }}"
                         alt="Sunshine PC Repairs Logo">
                     <h1 class="max-md:hidden m-1.5 p-1.5 text-4xl">Fuel Price</h1>
@@ -25,16 +26,19 @@
             </div>
 
             <div class="flex gap-x-2 sm:gap-x-6 md:gap-x-8 text-lg/6 font-semibold text-black">
-                <a  @if(Route::currentRouteName() == 'index') class="text-red-500" @endif href="{{ route('index') }}">Summary</a>
-                <a  @if(Route::currentRouteName() == 'raw' || Route::currentRouteName() == 'rawIndividual') class="text-red-500" @endif href="{{ route('raw') }}">Raw Data</a>
-                <a  @if(Route::currentRouteName() == 'source') class="text-red-500" @endif href="{{ route('source') }}">Source/Credits</a>
-               
+                <a @if (Route::currentRouteName() == 'index') class="text-red-500" @endif href="{{ route('index') }}">Summary</a>
+                <a @if (Route::currentRouteName() == 'raw' || Route::currentRouteName() == 'rawIndividual') class="text-red-500" @endif href="{{ route('raw') }}">Raw Data</a>
+                <a @if (Route::currentRouteName() == 'source') class="text-red-500" @endif
+                    href="{{ route('source') }}">Source/Credits</a>
+
 
             </div>
         </nav>
     </header>
 
-    {{ $slot }}
+    <div class="mx-2">
+        {{ $slot }}
+    </div>
 
 </body>
 
