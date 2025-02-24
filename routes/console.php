@@ -16,6 +16,7 @@ Artisan::command('inspire', function () {
 Schedule::call(function () {
     //todays date
     $date = new DateTime;
+    $date->setTimezone(new DateTimeZone('Australia/Brisbane'));
     $average = [];
 
     //change verify in production, only bypassed
@@ -75,8 +76,6 @@ Schedule::call(function () {
             };
         }
     }
-    //dd($lowest);
-
 
     //Save new entry to DB
     $fuelEntry = new Fuelprice();
