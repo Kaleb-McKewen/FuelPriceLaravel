@@ -5,7 +5,7 @@
             <div class="flex justify-center">
                 <h1 class="text-3xl font-medium underline">Displaying all Fuel Data:</h1>
             </div>
-            <div class="chartBox w-full p-5 pb-0 flex justify-center align-middle h-[400px] min-sm:h-[700px] max-w-[1000px]">
+            <div class="chartBox !w-full p-5 pb-0 flex justify-center align-middle h-[400px] min-sm:h-[700px] max-w-[1000px]">
                 <canvas id="myChart"></canvas>
             </div>
         </div>
